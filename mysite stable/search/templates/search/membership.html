@@ -1,0 +1,58 @@
+{% extends request.session.msg %}
+
+{%load static%}
+
+{% block title %}Membership{% endblock title %}
+
+{% block body %}
+
+<style>
+
+    @media (min-width: 576px){
+        .col-sm-6 {
+            width: 30%  !important;
+        }
+    }
+
+</style>
+
+<form method="post" action="/getmembership/">
+  {% csrf_token %}
+  <div class="wrapper" style=" background-image: url({% static 'media/bg.png'%});">
+    <center >
+        <div class="row" style="width:85%; margin-top:20px;margin-bottom:20px; ">
+            <div class="col-sm-6">
+            <div class="card" style="width: 15rem;">
+                <img class="card-img-top img-fluid" src="{% static 'media/img1.jpg'%}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">LifeLong Membership</h5>
+                  <input type="submit" class="nav-link btn btn-primary" name="life" value="Apply">
+
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card" style="width: 15rem;">
+                <img class="card-img-top img-fluid" src="{% static 'media/img1.jpg'%}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Student Membership</h5>
+                  <input type="submit" class="nav-link btn btn-primary" name="student" value="Apply">
+
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card" style="width: 15rem;">
+                <img class="card-img-top img-fluid" src="{% static 'media/img1.jpg'%}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Annual Membership</h5>
+                  <input type="submit" class="nav-link btn btn-primary" name="annual" value="Apply">
+                  <br>
+
+                </div>
+            </div>
+        </div>
+    </center>
+  </div>
+</form>
+{% endblock body %}
